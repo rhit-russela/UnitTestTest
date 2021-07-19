@@ -1,10 +1,4 @@
 # ASP.NET
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'build'
-# Build and test ASP.NET projects.
-# Add steps that publish symbols, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/apps/aspnet/build-aspnet-4
 
 trigger:
 - main
@@ -18,6 +12,14 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+# Build and test ASP.NET projects.
+# Add steps that publish symbols, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/apps/aspnet/build-aspnet-4
+
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
